@@ -1,4 +1,4 @@
-name = PhoneBook
+name = Account
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CP = c++
 srcs = Account.cpp tests.cpp
