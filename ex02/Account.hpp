@@ -56,15 +56,6 @@ private:
 
 };
 
-// MakeWithdrawal : [19920104_091532] index:5;p_amount:23;withdrawal:refused
-
-
-// [19920104_091532] index:0;amount:42;created
-// [19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
-// [19920104_091532] index:0;amount:42;deposits:0;withdrawals:0
-// [19920104_091532] index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
-// [19920104_091532] index:6;p_amount:763;withdrawal:657;amount:106;nb_withdrawals:1
-// [19920104_091532] index:1;amount:785;closed
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //

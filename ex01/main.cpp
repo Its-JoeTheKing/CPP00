@@ -1,10 +1,10 @@
 #include "PhoneBook.hpp"
 
-void readline(string read_msg, string *inp)
+void readline(std::string read_msg, std::string *inp)
 {
-	cout << read_msg;
-	getline(cin, *inp);
-	if (cin.eof())
+	std::cout << read_msg;
+	std::getline(std::cin, *inp);
+	if (std::cin.eof())
 		exit(0);
 }
 
@@ -13,29 +13,41 @@ int main()
 {
 	PhoneBook phone;
 	Contact cont;
-	string cmd;
-	string j;
+	std::string cmd;
+	std::string j;
 	phone.setSize(0);
-	while (cmd != "EXIT")
+	while (1)
 	{
-		getline(cin, cmd);
-		if (cin.eof())
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
 			return 0;
 		if (cmd == "ADD")
 		{
-			readline("firstName : ", &cont.firstName);
-			readline("lastName : ", &cont.lastName);
-			readline("nickname : ", &cont.nickname);
-			readline("phoneNumber : ", &cont.phoneNumber);
-			readline("secret : ", &cont.secret);
-			phone.addNewContact(cont.firstName, cont.lastName, cont.nickname, cont.phoneNumber, cont.secret);
+			readline("firstName: ", &j);
+			cont.setFirstName(j);
+
+			readline("lastName: ", &j);
+			cont.setLastName(j);
+
+			readline("nickname: ", &j);
+			cont.setNickname(j);
+
+			readline("phoneNumber: ", &j);
+			cont.setPhoneNumber(j);
+
+			readline("secret: ", &j);
+			cont.setSecret(j);
+
+			phone.addNewContact(cont);
 		}
 		else if (cmd == "SEARCH")
 		{
 			readline("index of phone : ", &j);
 			phone.findPhone(atoi(j.c_str()));
 		}
+		else if (cmd == "EXIT")
+			break ;
 		else
-			cout << "COMMAND NOT FOUND\n";
+			std::cout << "COMMAND NOT FOUND\n";
 	}
 }
