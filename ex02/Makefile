@@ -1,4 +1,4 @@
-name = PhoneBook
+name = Account
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CP = c++
 srcs = Account.cpp tests.cpp
@@ -8,7 +8,7 @@ RM = rm -f
 
 all: $(name)
 
-%.o: %.c $(heads)
+%.o: %.cpp $(heads)
 	$(CP) $(FLAGS) -c $< -o $@
 
 $(name): $(objs)

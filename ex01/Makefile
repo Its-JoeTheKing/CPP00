@@ -1,14 +1,14 @@
 name = PhoneBook
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CP = c++
-srcs = PhoneBook.cpp main.cpp
-heads = Conatact.hpp PhoneBook.hpp
+srcs = PhoneBook.cpp Contact.cpp main.cpp
+heads = Contact.hpp PhoneBook.hpp
 objs = ${srcs:.cpp=.o}
 RM = rm -f
 
 all: $(name)
 
-%.o: %.c $(heads)
+%.o: %.cpp $(heads)
 	$(CP) $(FLAGS) -c $< -o $@
 
 $(name): $(objs)

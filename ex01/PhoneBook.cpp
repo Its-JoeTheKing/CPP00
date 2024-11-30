@@ -1,5 +1,9 @@
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook()
+{
+
+}
 int PhoneBook::getsize()
 {
 	return this->size;
@@ -10,55 +14,60 @@ void PhoneBook::setSize(int n)
 	this->size = n;
 }
 
-void PhoneBook::addNewContact(string fName, string lName, string Nick, string PN, string sec)
+void PhoneBook::addNewContact(Contact c)
 {
+	const char *spaces = " \t\n\r\f\v";
+	size_t size = PhoneBook::getsize();
+	std::string fName = c.getFirstName();
+	fName.erase(0, fName.find_first_not_of(spaces));
+	std::string lName = c.getLastName();
+	lName.erase(0, lName.find_first_not_of(spaces));
+	std::string Nick = c.getNickname();
+	Nick.erase(0, Nick.find_first_not_of(spaces));
+	std::string PN = c.getPhoneNumber();
+	PN.erase(0, PN.find_first_not_of(spaces));
+	std::string sec = c.getSecret();
+	sec.erase(0, sec.find_first_not_of(spaces));
+	if (size > 7)
+		size = 7;
 	if (fName.length() && lName.length() && Nick.length() && PN.length() && sec.length())
 	{
-		this->contacts[size].id = size;
-		this->contacts[size].firstName = fName;
-		this->contacts[size].lastName = lName;
-		this->contacts[size].nickname = Nick;
-		this->contacts[size].phoneNumber = PN;
-		this->contacts[size].secret = sec;
+		this->contacts[size].setId(size);
+		this->contacts[size].setFirstName(fName);
+		this->contacts[size].setLastName(lName);
+		this->contacts[size].setNickname(Nick);
+		this->contacts[size].setPhoneNumber(PN);
+		this->contacts[size].setSecret(sec);
 		this->size++;
-		cout << "CONTACT ADDED SUCCESSFULLY\n";
+		std::cout << "CONTACT ADDED SUCCESSFULLY\n";
 	}
 	else
-		cout << "PLEASE FULL FILL ALL FORM\n";
+		std::cout << "PLEASE FULL FILL ALL FORM\n";
 }
 
-void PhoneBook::printContact(string str)
+void PhoneBook::printContact(std::string str)
 {
 	if (str.length() > 10)
-		cout << str.substr(0, 9) << ".";
-	else
-	{
-		cout << str;
-		for (size_t i = str.length(); i < 10; i++)
-		{
-			cout << " ";
-		}
-	}
+		str = str.substr(0, 9) + ".";
+	std::cout << std::setw(10) << std::left << str;
 }
 
 void PhoneBook::findPhone(size_t n)
 {
 	if (n < 0 || n > 7)
-		cout << "INDEX OUT OF RANGE\n";
-	else if (n > size - 1)
-		cout << "CONTACT NOT FOUND\n";
+		std::cout << "INDEX OUT OF RANGE\n";
+	else if (n >= this->size)
+		std::cout << "CONTACT NOT FOUND\n";
 	else
 	{
-		cout << "| " << contacts[n].id << " | ";
-		printContact(contacts[n].firstName);
-		cout << "|";
-		printContact(contacts[n].lastName);
-		cout << "|";
-		printContact(contacts[n].nickname);
-		cout << "|";
-		printContact(contacts[n].phoneNumber);
-		cout << "|";
-		printContact(contacts[n].secret);
-		cout << "|\n";
+		std::cout << "|";
+		std::cout << std::setw(10) << std::left << contacts[n].getId();
+		std::cout << "|";
+		printContact(contacts[n].getFirstName());
+		std::cout << "|";
+		printContact(contacts[n].getLastName());
+		std::cout << "|";
+		printContact(contacts[n].getNickname());
+		std::cout << "|" << std::endl;
 	}
 }

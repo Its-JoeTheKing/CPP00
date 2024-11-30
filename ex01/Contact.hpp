@@ -1,18 +1,36 @@
-#ifndef CONTACT_H
-#define CONTACT_H
-
+#pragma once
 #include <iostream>
-using std::string;
+#include <iomanip>
 
 class Contact
 {
-	public:
-		int id;
-		string firstName;
-		string lastName;
-		string nickname;
-		string phoneNumber;
-		string secret;
-};
+private:
+    int id;
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string phoneNumber;
+    std::string secret;
 
-#endif
+public:
+    Contact();
+    Contact(int newId, const std::string& newFirstName, const std::string& newLastName,
+            const std::string& newNickname, const std::string& newPhoneNumber,
+            const std::string& newSecret);
+
+    void setId(int newId);
+    void setFirstName(const std::string& newFirstName);
+    void setLastName(const std::string& newLastName);
+    void setNickname(const std::string& newNickname);
+    void setPhoneNumber(const std::string& newPhoneNumber);
+    void setSecret(const std::string& newSecret);
+
+    int getId() const;
+    std::string getFirstName() const;
+    std::string getLastName() const;
+    std::string getNickname() const;
+    std::string getPhoneNumber() const;
+    std::string getSecret() const;
+
+    void addNewContact();
+};
