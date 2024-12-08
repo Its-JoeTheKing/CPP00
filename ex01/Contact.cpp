@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 11:09:43 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/12/06 11:09:44 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/12/08 16:58:24 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ Contact::Contact()
 {
 
 }
-Contact::Contact(int newId, const std::string& newFirstName, const std::string& newLastName,
-                 const std::string& newNickname, const std::string& newPhoneNumber,
-                 const std::string& newSecret)
-    : id(newId), firstName(newFirstName), lastName(newLastName),
-      nickname(newNickname), phoneNumber(newPhoneNumber), secret(newSecret) {}
 
 void Contact::setId(int newId) {
     id = newId;

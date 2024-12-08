@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 11:11:36 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/12/08 12:22:54 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/12/08 16:55:36 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ class PhoneBook
 		void addNewContact(Contact c);
 		std::string replaceTabs(std::string &str);
 		void showAll();
-		bool is_printable(std::string str);
 		void findPhone(size_t n);
 };
