@@ -6,13 +6,14 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 11:09:51 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/12/06 11:09:53 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/12/07 15:10:10 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <iomanip>
+#include <cctype>
 
 class Contact
 {

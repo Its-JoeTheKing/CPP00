@@ -6,7 +6,7 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 11:09:59 by aerrfig           #+#    #+#             */
-/*   Updated: 2024/12/06 11:10:01 by aerrfig          ###   ########.fr       */
+/*   Updated: 2024/12/08 12:01:41 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 	phone.setSize(0);
 	while (1)
 	{
+		std::cout << ":> ";
 		std::getline(std::cin, cmd);
 		if (std::cin.eof())
 			return 1;
@@ -56,6 +57,7 @@ int main()
 		{
 			size_t i = 0;
 			int	err = 0;
+			phone.showAll();
 			readline("index of phone : ", &j);
 			if (j[0] == '+')
 				i++;
